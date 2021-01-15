@@ -1,0 +1,58 @@
+name: Deploy static
+
+on:
+  push:
+    tags:
+      - '*stable*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build static app
+        run: npx next build && npx next export
+
+      - name: Setup server SSH key
+        uses: webfactory/ssh-agent@v0.1.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PROD_PK }}
+      - run: ssh-keyscan -p 8888 domain.ro >> ~/.ssh/known_hosts
+
+      - name: Upload to prod
+        run: scp -P 8888 -r out/*  user@domain.ro:the/path
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '15'
+
+      # CACHE
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+
+      - name: Install libs
+        run: yarn
+
+      - name: Build Next app
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test:ci
+
+      - name: Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          name: PR test
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage/clover.xml

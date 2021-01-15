@@ -1,0 +1,7 @@
+.select {
+  @apply block appearance-none p-1 w-full;
+}
+
+.select:focus {
+  @apply outline-none border-gray-800;
+}

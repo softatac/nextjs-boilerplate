@@ -1,0 +1,23 @@
+.label {
+  @apply block capitalize;
+}
+
+.submit {
+  @apply bg-indigo-600 text-white font-light py-2 px-6 rounded uppercase;
+}
+
+.submit:hover {
+  @apply bg-blue-700;
+}
+
+.submit:focus {
+  @apply outline-white;
+}
+
+.submit:disabled {
+  @apply opacity-50;
+}
+
+.error {
+  @apply text-red-500 text-sm;
+}

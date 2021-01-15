@@ -1,0 +1,19 @@
+.container {
+  @apply fill-current flex flex-col items-center py-8 text-white border-t-4 border-gray-600 bg-gray-500 relative;
+}
+
+.legal {
+  @apply mt-8 text-sm;
+}
+
+@screen md {
+  .links {
+    @apply flex flex-row;
+  }
+}
+
+@screen lg {
+  .legal {
+    @apply text-base;
+  }
+}

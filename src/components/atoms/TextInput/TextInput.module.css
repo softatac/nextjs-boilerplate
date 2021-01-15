@@ -1,0 +1,11 @@
+.container {
+  @apply flex items-center overflow-hidden;
+}
+
+.icon {
+  @apply ml-4 w-6 h-6 fill-current;
+}
+
+.input {
+  @apply p-1 w-full;
+}

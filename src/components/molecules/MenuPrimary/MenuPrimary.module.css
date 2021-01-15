@@ -1,0 +1,24 @@
+.container {
+  @apply bg-primary-500 h-full;
+}
+
+.item {
+  @apply flex h-full w-full items-center justify-center text-center px-3 m-1;
+  @apply duration-200 ease-in-out;
+  @apply text-onPrimary;
+  min-height: 3rem;
+}
+
+.badge {
+  @apply absolute text-xs bottom-0;
+  text-transform: uppercase;
+  right: 5px;
+}
+
+.item:hover {
+  @apply bg-primary-600;
+}
+
+.active {
+  @apply bg-primary-600 font-bold;
+}

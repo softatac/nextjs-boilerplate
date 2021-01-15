@@ -1,0 +1,19 @@
+.datepicker {
+  @apply py-1 text-center cursor-pointer;
+}
+
+.datepicker:hover {
+  @apply bg-blue-100;
+}
+
+.datepicker,
+.datepicker > div.react-datepicker-wrapper,
+.datepicker
+  > div
+  > div.react-datepicker__input-container
+  .datepicker
+  > div
+  > div.react-datepicker__input-container
+  input {
+  width: 100%;
+}

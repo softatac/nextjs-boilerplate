@@ -1,0 +1,64 @@
+name: Run tests
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '15'
+
+      # CACHE
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+
+      - name: Install libs
+        run: yarn
+
+      - name: ESLint
+        run: yarn lint:ci
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '15'
+
+      # CACHE
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+
+      - name: Install libs
+        run: yarn install --ignore-engines
+
+      # - name: Build Storybook
+      #   run: yarn storybook:build
+
+      - name: Build Next app
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test:ci
+
+      - name: Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          name: PR test
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage/clover.xml

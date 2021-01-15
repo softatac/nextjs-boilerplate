@@ -1,0 +1,14 @@
+.icon {
+    @apply mx-4;
+  }
+  
+/* SIZES */
+.sm {
+  @apply w-8 h-8;
+}
+.md {
+  @apply w-12 h-12;
+}
+.lg {
+  @apply w-16 h-16;
+}

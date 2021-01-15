@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700&display=swap');
+
+@font-face {
+  font-family: Gotham Rounded;
+  src: url('/fonts/Muli.ttf');
+  font-display: swap;
+}
+body {
+  @apply font-medium;
+  font-size: 16px;
+}
+pre {
+  @apply overflow-x-auto break-words;
+}
+
+/** Typography **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply my-2;
+}
+h1 {
+  @apply text-4xl font-bold;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-xl;
+}
+h4 {
+  @apply text-lg;
+}
+p {
+  @apply text-base;
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
+}
+
+/** Inputs **/
+.input-container {
+  @apply border border-gray-400;
+  @apply rounded-md;
+  @apply transition-colors duration-500 ease-in-out;
+}

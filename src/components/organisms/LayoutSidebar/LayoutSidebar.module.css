@@ -1,0 +1,9 @@
+.wrapper {
+  @apply flex min-h-screen;
+  @apply bg-gray-700;
+}
+
+.container {
+  @apply flex flex-col flex-grow;
+  @apply bg-background-500;
+}

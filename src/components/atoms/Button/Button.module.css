@@ -1,0 +1,84 @@
+.button {
+  @apply flex justify-center items-center;
+  @apply font-medium text-base;
+  @apply h-10 px-4 rounded-lg;
+}
+.button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+.button:focus {
+  @apply outline-none;
+}
+
+.icon {
+  @apply w-6 h-6 mx-2 fill-current;
+}
+.label {
+  @apply whitespace-nowrap truncate;
+  margin-top: 0.125em; /* center text vertically */
+}
+
+/**
+ * Sizes
+ */
+.sm {
+  /* @apply text-sm; */
+  @apply h-8 p-4 px-3;
+}
+.sm .icon {
+  @apply w-4 h-4 mx-2;
+}
+.sm .icon {
+  @apply w-4 h-4 mx-2;
+}
+.lg {
+  @apply text-lg;
+  @apply h-12 px-6;
+}
+
+/**
+ * Variants
+ */
+.default {
+  @apply bg-primary-500;
+  @apply text-white border border-blue-500;
+}
+.default:hover {
+  @apply bg-white text-blue-500 border-blue-500;
+}
+.default:active {
+  @apply bg-blue-200;
+}
+
+.secondary {
+  @apply bg-white text-gray-700;
+}
+
+.success {
+  @apply bg-green-500 border border-green-500;
+  @apply text-white;
+}
+.success:hover {
+  @apply text-green-500 bg-white;
+}
+
+.clear {
+  @apply bg-transparent;
+}
+
+.bgwhite {
+  @apply bg-white text-blue-500 border border-white;
+}
+.bgwhite:hover {
+  @apply border-white bg-primary-500 text-white;
+}
+
+.darker {
+  @apply bg-blue-600 text-white border border-blue-600;
+}
+.darker:hover {
+  @apply bg-blue-800 border-blue-800;
+}
+.darker:active {
+  @apply bg-white text-blue-800 border border-blue-800;
+}

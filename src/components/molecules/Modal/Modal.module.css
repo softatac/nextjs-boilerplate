@@ -1,0 +1,9 @@
+.modalContainer {
+    @apply fixed w-full h-full z-10;
+    background: rgba(0, 0, 0, 0.288);
+}
+
+.modalContent {
+    @apply relative w-3/5 mx-auto my-12;
+    height: 80%;
+}

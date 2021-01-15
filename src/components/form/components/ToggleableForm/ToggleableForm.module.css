@@ -1,0 +1,8 @@
+.container:global.disabled :global .input-container {
+  @apply border-transparent;
+}
+
+.container input:disabled,
+.container select:disabled {
+  @apply bg-blue-100;
+}

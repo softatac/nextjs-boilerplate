@@ -1,0 +1,23 @@
+.root {
+  @apply flex flex-col w-40 border border-gray-500 relative rounded-lg;
+}
+.rootExpanded {
+  @apply border-transparent;
+}
+
+.optionsContainer {
+  @apply flex flex-col w-40 absolute border  overflow-y-scroll overflow-x-hidden rounded-lg z-10;
+  top: -1px;
+  max-height: 200px;
+}
+.option {
+  @apply border-t bg-gray-200 text-gray-800 px-4 py-2 rounded-md text-sm;
+  min-height: 35px;
+}
+.optionExpanded {
+  @apply rounded-none;
+}
+
+.option:hover {
+  @apply bg-gray-500 border-gray-500;
+}

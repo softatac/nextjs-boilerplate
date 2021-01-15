@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@store/*": ["store/*"],
+      "@context/*": ["context/*"],
+      "@atom/*": ["components/atoms/*"],
+      "@molecule/*": ["components/molecules/*"],
+      "@organism/*": ["components/organisms/*"],
+      "@form/*": ["components/form/*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@config": ["config/index"],
+      "@config/*": ["config/*"],
+      "@assets/*": ["assets/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "next-env.d.ts",
+    "custom.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/lib/api/storage/index.test.tsx.old",
+    "src/context/profile/actions.test.tsx.old",
+    "src/components/form/LoginForm/LoginForm.test.tsx.old",
+    "src/context/auth/actions.test.tsx.old",
+    "src/__tests__/index.test.js"
+  ]
+}

@@ -1,0 +1,34 @@
+.nav {
+  @apply bg-gray-700;
+  min-width: 200px;
+  width: 200px;
+}
+.collapsed {
+  @apply w-10;
+  min-width: 40px;
+}
+
+.item {
+  @apply flex items-center p-2 h-12 my-1;
+  @apply duration-200 ease-in-out;
+  @apply text-onPrimary;
+}
+.item:hover {
+  @apply bg-gray-800;
+}
+.item.active {
+  @apply bg-gray-800 font-bold;
+}
+
+.toggle {
+  @apply w-8 m-1 p-1 px-2 rounded-sm float-right;
+  @apply bg-primary-200;
+}
+
+.notificationCount {
+  @apply bg-orange-600 rounded font-normal text-xs;
+  @apply px-1 ml-1;
+  /* this is needed for perfect positioning */
+  line-height: 15px;
+  padding-top: 2px;
+}
