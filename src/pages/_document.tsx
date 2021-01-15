@@ -2,10 +2,6 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document'
 
 export default class MyDocument extends Document {
-  componentDidMount() {
-    hotjar.initialize(2105660, 6)
-  }
-
   render() {
     return (
       <Html lang="en">
