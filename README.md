@@ -1,3 +1,5 @@
+![Tests](https://github.com/softatac/nextjs-boilerplate/workflows/Run%20tests/badge.svg)
+
 NextJS boilerplate with:
 - tailwindCSS
 - sentry
