@@ -34,8 +34,6 @@ export default class MyDocument extends Document {
 
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
-
-          <script async src="https://app.insignal.co/pixel/qhkBh1dA0Cy4AP46"></script>
         </Head>
         <body>
           <Main />
